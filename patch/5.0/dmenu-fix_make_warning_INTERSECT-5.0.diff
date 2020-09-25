@@ -1,0 +1,11 @@
+--- ../dmenu-5.0/dmenu.c	2020-09-02 19:37:07.000000000 +0300
++++ ./dmenu.c	2020-09-25 15:14:22.990753933 +0300
+@@ -21,7 +21,7 @@
+ 
+ /* macros */
+ #define INTERSECT(x,y,w,h,r)  (MAX(0, MIN((x)+(w),(r).x_org+(r).width)  - MAX((x),(r).x_org)) \
+-                             * MAX(0, MIN((y)+(h),(r).y_org+(r).height) - MAX((y),(r).y_org)))
++                             && MAX(0, MIN((y)+(h),(r).y_org+(r).height) - MAX((y),(r).y_org)))
+ #define LENGTH(X)             (sizeof X / sizeof X[0])
+ #define TEXTW(X)              (drw_fontset_getwidth(drw, (X)) + lrpad)
+ 
