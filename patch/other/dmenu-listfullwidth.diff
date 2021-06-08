@@ -1,0 +1,34 @@
+--- a/config.def.h	2021-06-08 15:07:20.308391486 +0300
++++ b/config.def.h	2021-06-08 16:00:24.523599122 +0300
+@@ -1,6 +1,7 @@
+ /* See LICENSE file for copyright and license details. */
+ /* Default settings; can be overriden by command line. */
+ 
++static int colorprompt = 0;                 /* -p  option; if 1, prompt uses SchemeSel, otherwise SchemeNorm */
+ static int instant = 0;
+ static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
+ /* -fn option overrides fonts[0]; default X11 font or font set */
+--- a/dmenu.c	2021-06-08 15:07:20.308391486 +0300
++++ b/dmenu.c	2021-06-08 16:25:35.990758138 +0300
+@@ -143,7 +143,8 @@ drawmenu(void)
+ 	drw_rect(drw, 0, 0, mw, mh, 1, 1);
+ 
+ 	if (prompt && *prompt) {
+-		drw_setscheme(drw, scheme[SchemeSel]);
++		if (colorprompt)
++			drw_setscheme(drw, scheme[SchemeSel]);
+ 		x = drw_text(drw, x, 0, promptw, bh, lrpad / 2, prompt, 0);
+ 	}
+ 	/* draw input field */
+@@ -168,9 +169,9 @@ drawmenu(void)
+ 		for (item = curr; item != next; item = item->right, i++)
+ 			drawitem(
+ 				item,
+-				x + ((i / lines) *  ((mw - x) / columns)),
++				0 + ((i / lines) *  ((mw - 0) / columns)),
+ 				y + (((i % lines) + 1) * bh),
+-				(mw - x) / columns
++				(mw - 0) / columns
+ 			);
+ 	} else if (matches) {
+ 		/* draw horizontal list */
