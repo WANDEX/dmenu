@@ -143,7 +143,8 @@ drawmenu(void)
 	drw_rect(drw, 0, 0, mw, mh, 1, 1);
 
 	if (prompt && *prompt) {
-		drw_setscheme(drw, scheme[SchemeSel]);
+		if (colorprompt)
+			drw_setscheme(drw, scheme[SchemeSel]);
 		x = drw_text(drw, x, 0, promptw, bh, lrpad / 2, prompt, 0);
 	}
 	/* draw input field */
@@ -168,9 +169,9 @@ drawmenu(void)
 		for (item = curr; item != next; item = item->right, i++)
 			drawitem(
 				item,
-				x + ((i / lines) *  ((mw - x) / columns)),
+				0 + ((i / lines) *  ((mw - 0) / columns)),
 				y + (((i % lines) + 1) * bh),
-				(mw - x) / columns
+				(mw - 0) / columns
 			);
 	} else if (matches) {
 		/* draw horizontal list */
