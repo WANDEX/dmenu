@@ -4,6 +4,8 @@ dmenu \- dynamic menu
 .SH SYNOPSIS
 .B dmenu
 .RB [ \-bfinvP ]
+.RB [ \-g
+.IR columns ]
 .RB [ \-l
 .IR lines ]
 .RB [ \-m
@@ -55,8 +57,11 @@ dmenu instantly selects if only one match.
 .B \-P
 dmenu will not directly display the keyboard input, but instead replace it with dots. All data from stdin will be ignored.
 .TP
+.BI \-g " columns"
+dmenu lists items in a grid with the given number of columns.
+.TP
 .BI \-l " lines"
-dmenu lists items vertically, with the given number of lines.
+dmenu lists items in a grid with the given number of lines.
 .TP
 .BI \-m " monitor"
 dmenu is displayed on the monitor number supplied. Monitor numbers are starting
