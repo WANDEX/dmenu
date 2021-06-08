@@ -1,3 +1,4 @@
 *.o
 stest
 dmenu
+config.h
