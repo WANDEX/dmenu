@@ -5,3 +5,4 @@
 |A  ./patch/4.9/dmenu-xresources-4.9.diff # introduces make warnings!
 |A  ./patch/4.7/dmenu-initialtext-4.7.diff
 |A  ./patch/other/dmenu-instant.diff
+|A  ./patch/4.9/dmenu-grid-4.9.diff
