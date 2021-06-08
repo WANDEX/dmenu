@@ -1,5 +1,6 @@
 # ignores data after # character
-./patch/5.0/dmenu-fix_make_warning_INTERSECT-5.0.diff
-./patch/5.0/dmenu-fix_color_fonts-5.0.diff
-./patch/5.0/dmenu-password_4.9FIX-5.0.diff
-./patch/4.9/dmenu-xresources-4.9.diff # introduces make warnings!
+|A  ./patch/5.0/dmenu-fix_make_warning_INTERSECT-5.0.diff
+|A  ./patch/5.0/dmenu-fix_color_fonts-5.0.diff
+|A  ./patch/5.0/dmenu-password_4.9FIX-5.0.diff
+|A  ./patch/4.9/dmenu-xresources-4.9.diff # introduces make warnings!
+|A  ./patch/4.7/dmenu-initialtext-4.7.diff
