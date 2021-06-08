@@ -1,4 +1,5 @@
 # ignores data after # character
+|A  ./patch/other/keys.diff
 |A  ./patch/5.0/dmenu-fix_make_warning_INTERSECT-5.0.diff
 |A  ./patch/5.0/dmenu-fix_color_fonts-5.0.diff
 |A  ./patch/5.0/dmenu-password_4.9FIX-5.0.diff

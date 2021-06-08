@@ -401,18 +401,25 @@ keypress(XKeyEvent *ev)
 		}
 	} else if (ev->state & Mod1Mask) {
 		switch(ksym) {
-		case XK_b:
+		case XK_h:
 			movewordedge(-1);
 			goto draw;
-		case XK_f:
+		case XK_i:
 			movewordedge(+1);
 			goto draw;
-		case XK_g: ksym = XK_Home;  break;
-		case XK_G: ksym = XK_End;   break;
-		case XK_h: ksym = XK_Up;    break;
+		case XK_n: ksym = XK_Down;  break;
+		case XK_e: ksym = XK_Up;    break;
 		case XK_j: ksym = XK_Next;  break;
 		case XK_k: ksym = XK_Prior; break;
-		case XK_l: ksym = XK_Down;  break;
+		case XK_l: /* delete left */
+			insert(NULL, 0 - cursor);
+			break;
+		case XK_y: /* delete right */
+			text[cursor] = '\0';
+			match();
+			break;
+		case XK_g: ksym = XK_Home;  break;
+		case XK_G: ksym = XK_End;   break;
 		default:
 			return;
 		}
