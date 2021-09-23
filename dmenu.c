@@ -352,6 +352,7 @@ keypress(XKeyEvent *ev)
 		switch(ksym) {
 		case XK_a: ksym = XK_Home;      break;
 		case XK_b: ksym = XK_Left;      break;
+		case XK_l: ksym = XK_Escape;    break;
 		case XK_c: ksym = XK_Escape;    break;
 		case XK_d: ksym = XK_Delete;    break;
 		case XK_e: ksym = XK_End;       break;
